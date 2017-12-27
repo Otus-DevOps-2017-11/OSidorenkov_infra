@@ -21,3 +21,7 @@ Host someinternalhost
 ```
 ssh appuser@someinternalhost
 ```
+
+### Конфигурация подключения
+Хост bastion, IP: 35.205.94.11, внутр. IP: 10.132.0.2
+Хост: someinternalhost, внутр. IP: 10.132.0.3 
