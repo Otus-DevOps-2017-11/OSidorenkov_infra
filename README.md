@@ -154,3 +154,36 @@ Homework 09
 
 Отформатированы файлы конфигураций terraform.
 
+
+Homework 10
+------
+Создан инвентори файл в виде json:
+```json
+{
+  "app": {
+    "hosts": {
+      "appserver": {
+        "ansible_host": "35.195.249.7"
+      }
+    } 
+  },
+  "db": {
+    "hosts": {
+      "dbserver": {
+        "ansible_host": "35.205.72.189"
+      }
+    }
+  }
+}
+```
+
+Проверяем: 
+
+`ansible all -i inventory.json -m command -a uptime`
+```
+appserver | SUCCESS | rc=0 >>
+ 19:03:35 up  9:06,  1 user,  load average: 0.00, 0.00, 0.00
+
+dbserver | SUCCESS | rc=0 >>
+ 19:03:35 up  9:06,  1 user,  load average: 0.00, 0.00, 0.00
+ ```
