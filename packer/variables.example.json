@@ -1,4 +1,5 @@
 {
+"sif": "ubuntu-1604-lts",
 "proj_id": "infra-your-id",
 "disk_type": "pd-standard",
 "disk_size": "10",

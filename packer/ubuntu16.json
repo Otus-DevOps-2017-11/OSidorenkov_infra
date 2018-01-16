@@ -1,8 +1,8 @@
 {
    "variables": {
-      "proj_id": "infra-190310",
+      "proj_id": "null",
       "m_type": "f1-micro",
-      "sif": "ubuntu-1604-lts"
+      "sif": "null"
    },
    "builders":[  
       {  
