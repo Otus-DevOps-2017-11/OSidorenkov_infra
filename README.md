@@ -112,3 +112,33 @@ gcloud compute instances create reddit-app  \
 --restart-on-failure
 ```
 
+Homework 08
+------
+### 1. Самостоятельная работа
+1. Добавлена переменная для определения приватного ключа:  
+`private_key_path = "~/.ssh/appuser"`
+
+2. Определение зоны по умолчанию в файле _variables.tf_:
+```
+variable "zone" {
+  type        = "string"
+  description = "Zone"
+  default     = "europe-west1-b"
+}
+```
+
+3. Команда `terraform fmt` приводит все конфиги terraform в красивый вид.
+
+4. Создан _terraform.tfvars.example_.
+
+### 2. Дополнительное задание №1. 
+* Изменен пользователь на **appuser3**. Применил изменения. В итоге добавился новый пользователь на хост. Старый пользователь остался, но публичный ключ у него стерся, так что доступ по ssh к нему пропал.
+
+* Добавлены пользователи в область metadata, каждый новый юзер добавляется через `\n`:
+```
+    sshKeys = "appuser:${file(var.public_key_path)}\nappuser1:${file(var.public_key_path)}\nappuser2:${file(var.public_key_path)}\nappuser3:${file(var.public_key_path)}"
+
+```
+Добавилсь новые пользователи, ко все есть доступ по ssh.
+
+* После того как был добавлен новый пользовтель и ключ, а после применены изменения через `terraform apply`, внесенные руками данные из интерфейса были удалены.
