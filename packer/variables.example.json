@@ -1,0 +1,9 @@
+{
+"sif": "ubuntu-1604-lts",
+"proj_id": "infra-your-id",
+"disk_type": "pd-standard",
+"disk_size": "10",
+"image_description": "Тестовый образ reddit в рамках HW07",
+"network": "default",
+"tags": "puma-server"
+}

@@ -87,3 +87,28 @@ gcloud compute firewall-rules create default-puma-server \
 --priority=1000
 
 ```
+
+
+Homework 07
+------
+### 1. Самостоятельная работа
+1. Создан файл с переменными variables.json, добавлен в `.gitignore`. Для примера представлен файл variables.example.json.  
+2. Исследованы опции builder, добавлены переменные в variables.json(а также в variables.example.json).  
+
+### 2. Дополнительное задание №1. 
+Создан шаблон для образа reddit-full. За основу взят шаблон ubuntu16.json. Добавлено:  
+  * Деплой приложения
+  * Копирование заранее созданного systemd скрипта в образ. Добавление сервиса в автозагрузку.
+
+### 3. Дополнительное задание №2. 
+Создан скрипт _create-reddit-vm.sh_:
+```
+gcloud compute instances create reddit-app  \
+--boot-disk-size=10GB   \
+--image-family reddit-full  \
+--image-project=infra-190310  \
+--machine-type=f1-micro \
+--tags puma-server   \
+--restart-on-failure
+```
+
