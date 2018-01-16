@@ -1,7 +1,5 @@
 {
 "proj_id": "infra-your-id",
-"sif": "ubuntu-1604-lts",
-"m_type": "f1-micro",
 "disk_type": "pd-standard",
 "disk_size": "10",
 "image_description": "Тестовый образ reddit в рамках HW07",
