@@ -213,4 +213,7 @@ terraform-inventory умеет работать с remote state.
 ```bash
 ansible-playbook --inventory-file=/path/to/terraform-inventory site.yml
 ```
+Результат:
+![image](https://user-images.githubusercontent.com/12871885/35779233-a5ef1492-09da-11e8-9673-324848fc2556.png)
 
+#### Задание со звездочкой
