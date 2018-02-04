@@ -16,16 +16,11 @@ variable "zone" {
 }
 
 variable public_key_path {
-  description = "~/.ssh/appuser.pub"
+  description = "Path to the public key used for ssh access"
 }
 
 variable private_key_path {
-  description = "~/.ssh/appuser"
-}
-
-variable "disk_image" {
-  type        = "string"
-  description = "reddit-base"
+  description = "Path to the private key used for ssh access"
 }
 
 variable app_disk_image {
