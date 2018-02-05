@@ -27,3 +27,13 @@ variable "disk_image" {
   type        = "string"
   description = "reddit-base"
 }
+
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+
+variable db_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
