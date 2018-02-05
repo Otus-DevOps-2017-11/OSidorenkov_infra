@@ -187,3 +187,33 @@ appserver | SUCCESS | rc=0 >>
 dbserver | SUCCESS | rc=0 >>
  19:03:35 up  9:06,  1 user,  load average: 0.00, 0.00, 0.00
  ```
+
+
+Homework 11
+------
+* Создание ansible playbooks
+
+* Были созданы ansible playbooks для развертывания приложения и настройки базы данных
+
+* Так же был переделан провижининг в packer со скриптов на ansible
+
+#### Задание со звездочкой
+
+*Найдено два варианта dynamic inventory для GCP:*
+
+```
+ - gce.py(описан в документации ansible http://docs.ansible.com/ansible/latest/guide_gce.html)
+ - terraform-inventory (https://github.com/adammck/terraform-inventory)
+```
+terraform-inventory у меет работать не только с GCP.
+Для установки можно воспользоваться уже скомпилированными файлами или скомпилировать самим.
+Для использования terraform-inventory нужно указать переменную окружения TF_STATE, в которой нужно прописать путь до папки с terraform или путь до tfstate файла. 
+terraform-inventory умеет работать с remote state.
+
+```bash
+ansible-playbook --inventory-file=/path/to/terraform-inventory site.yml
+```
+Результат:
+![image](https://user-images.githubusercontent.com/12871885/35779233-a5ef1492-09da-11e8-9673-324848fc2556.png)
+
+#### Задание со звездочкой
