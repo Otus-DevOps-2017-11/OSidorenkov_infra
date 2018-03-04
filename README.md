@@ -216,4 +216,40 @@ ansible-playbook --inventory-file=/path/to/terraform-inventory site.yml
 Результат:
 ![image](https://user-images.githubusercontent.com/12871885/35779233-a5ef1492-09da-11e8-9673-324848fc2556.png)
 
-#### Задание со звездочкой
+
+Homework 12
+------
+* Создание ролей ansible
+
+* Использование готовых ролей ansible-galaxy
+
+Вызов ролей:
+```yaml
+- name: Configure App
+  hosts: app
+  become: true
+
+  roles:
+    - app
+    - jdauphant.nginx
+```
+
+Открытие 80 порта в `terraform/modules/vpc/main.tf` для проксирования на порт приложения:
+```yaml
+ resource "google_compute_firewall" "firewall_nginx" {
+   name    = "default-allow-nginx"
+   network = "default"
+
+   allow {
+     protocol = "tcp"
+     ports    = ["80"]
+   }
+
+   source_ranges = "${var.source_ranges}"
+ }
+```
+
+Результат:
+![image](https://user-images.githubusercontent.com/12871885/36944555-140f43da-1fb0-11e8-99fb-d3c9ce1a9382.png)
+
+
